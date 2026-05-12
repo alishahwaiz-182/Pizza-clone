@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            height: 100px;
+            background-color: rgba(24, 24, 24, 0.959);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0px 3px 30px rgba(190, 103, 16, 0.863);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+
+        .first .logoname {
+            /* color: aliceblue; */
+            color: rgb(230, 107, 12);
+            font-size: 30px;
+
+        }
+
+        .logoname:hover {
+            cursor: pointer;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        ul li a {
+            color: white;
+            text-decoration: none;
+            transition: all 1.5s;
+        }
+
+        ul li a:hover {
+            background-color: rgb(230, 107, 12);
+            padding: 14px 35px;
+            border-radius: 10px;
+            transition: 1.5s;
+
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+        }
+
+        @media(max-width:768px) {
+
+            nav {
+                justify-content: space-between;
+                padding: 0px 50px;
+            }
+
+            .second {
+                position: absolute;
+                top: 100px;
+                left: 0px;
+                width: 100%;
+                background-color: rgba(24, 24, 24, 0.959);
+                display: none;
+            }
+
+            .second ul {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px 0px;
+            }
+
+
+            .hamburger {
+                display: flex;
+            }
+
+            .second.active {
+                display: block;
+            }
+
+        }
+
+
+        main {
+            padding-top: 100px;
+        }
+
+        .home {
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.3)), url("img/home.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* padding-top: 100px; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home h1 {
+            position: relative;
+            top: 0;
+            left: 0;
+            color: rgb(230, 107, 12);
+            font-size: 48px;
+            z-index: 2;
+            padding-left: 600px;
+        }
+
+        .home p {
+            position: relative;
+            top: 0;
+            left: 0;
+            color: white;
+            z-index: 2;
+            padding-left: 600px;
+        }
+
+        @media(max-width:1290px) {
+
+            .home {
+                height: 80vh;
+                text-align: center;
+
+            }
+
+            .home h1 {
+                font-size: 48px;
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .home p {
+                font-size: 16px;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        section.menu {
+            height: 700px;
+            background-color: rgba(24, 24, 24, 0.959);
+
+
+        }
+
+        .menu h1 {
+            color: rgb(230, 107, 12);
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .cardscontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cards {
+            margin: 20px;
+            height: 550px;
+            width: 450px;
+            border: 1px solid rgb(230, 107, 12);
+            transition: all 1.5s;
+            transform-origin: bottom;
+        }
+
+        .cardimg img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+
+
+        }
+
+        .cards a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 160px 0px 160px;
+        }
+
+        .cardbtn {
+            text-decoration: none;
+            border: 2px solid rgb(230, 107, 12);
+            padding: 10px 15px;
+            color: white;
+            border-radius: 15px;
+            transition: all 1.5s;
+
+        }
+
+        .cardbtn:hover {
+            background-color: rgba(190, 103, 16, 0.863);
+            padding: 13px 20px;
+            margin: 0px 147px 0px 140px;
+            transition: all 1.5s;
+        }
+
+        .cards .title {
+            color: rgb(230, 107, 12);
+            font-size: 25px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .cards .para {
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            margin: 5px 0px;
+        }
+
+        .cards:hover {
+            transition: all 1.5s;
+            transform: scale(1.03);
+
+        }
+
+        @media (max-width:1457px) {
+
+            section.menu {
+                height: 100%;
+            }
+
+            .cardscontainer {
+                flex-direction: column;
+            }
+        }
+
+        .contactus {
+            background-color: rgba(24, 24, 24, 0.959);
+            min-height: 100vh;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contactus h1 {
+            color: rgb(230, 107, 12);
+            margin-bottom: 10px;
+        }
+
+        .contactus p {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        /* Form */
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Inputs */
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        /* Button */
+        .contact-form button {
+            background-color: transparent;
+            border: 2px solid rgb(230, 107, 12);
+            color: white;
+            padding: 12px;
+            border-radius: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 1.5s;
+        }
+
+        .contact-form button:hover {
+            background-color: rgba(190, 103, 16, 0.863);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .contact-form {
+                width: 100%;
+            }
+        }
+
+        footer {
+            background-color: rgba(24, 24, 24, 0.959);
+            box-shadow: 0px -3px 30px rgba(190, 103, 16, 0.863);
+            color: white;
+            /* margin-top: 50px; */
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 50px 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo h2 {
+            color: rgb(230, 107, 12);
+            font-size: 30px;
+        }
+
+        .footer-logo p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .footer-links h3,
+        .footer-contact h3 {
+            color: rgb(230, 107, 12);
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links ul li {
+            list-style: none;
+        }
+
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            transition: all 1.5s;
+        }
+
+        .footer-links ul li a:hover {
+            background-color: rgb(230, 107, 12);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 15px 0;
+            border-top: 1px solid rgb(230, 107, 12);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                gap: 30px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="first">
+                <div class="logoname">&PIZZA</div>
+            </div>
+
+            <div class="second">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#contactus">Contact</a></li>
+                </ul>
+            </div>
+
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="home" id="home">
+
+            <h1>Welcome To Pizza Shop</h1>
+            <p>Freshly baked pizzas made with premium ingredients, served hot and full of flavor.</p>
+
+        </section>
+
+
+        <section class="menu" id="menu">
+
+            <h1>Our Signature Pizzas</h1>
+
+            <div class="cardscontainer">
+
+                <div class="cards">
+
+                    <div class="cardimg">
+                        <img src="img/card1.png" alt="">
+                    </div>
+
+                    <div class="title">
+                        Cheese Pizza
+                    </div>
+
+                    <div class="para">
+                        Crispy crust topped with rich tomato sauce and perfectly melted mozzarella cheese.
+                    </div>
+
+                    <a href="" class="cardbtn">Order Now</a>
+
+                </div>
+
+                <div class="cards">
+
+                    <div class="cardimg">
+                        <img src="img/card2.png" alt="">
+                    </div>
+
+                    <div class="title">
+                        Pepporoni Pizza
+                    </div>
+
+                    <div class="para">
+                        Golden crust topped with spicy pepperoni slices and melted cheesy goodness
+                    </div>
+
+                    <a href="" class="cardbtn">Order Now</a>
+
+                </div>
+
+                <div class="cards">
+
+                    <div class="cardimg">
+                        <img src="img/card3.png" alt="">
+                    </div>
+
+                    <div class="title">
+                        Afghani Pizza
+                    </div>
+
+                    <div class="para">
+                        Soft base topped with creamy white sauce, tender chicken, and mild spices
+                    </div>
+
+                    <a href="" class="cardbtn">Order Now</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="contactus">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you</p>
+
+            <form class="contact-form" id="contactform">
+                <input type="text" id="name" placeholder="Enter your name">
+                <input type="email" id="email" placeholder="Enter your email">
+                <textarea id="address" placeholder="Enter your address"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>&PIZZA</h2>
+                <p>Fresh pizzas, hot deals & happy customers 🍕</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#contactus">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p>Email: pizza@shop.com</p>
+                <p>Phone: +92 300 1234567</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Pizza Shop | All Rights Reserved
+        </div>
+    </footer>
+
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".second");
+
+        hamburger.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+
+
+
+
+        const form = document.getElementById("contactform");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // form submit ko rokta hai
+
+            // values
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const address = document.getElementById("address").value.trim();
+
+            // simple validation
+            if (name === "" || email === "" || address === "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please fill all the fields!'
+                });
+                return; // koi aur action na ho
+            } else {
+
+                // agar sab sahi hai
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Congratulations!',
+                    text: 'Thankyou for Order'
+                });
+
+                // optional: form reset
+                form.reset()
+            };
+        });
+
+
+    </script>
+
+</body>
+
+</html>
