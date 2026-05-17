@@ -3,7 +3,7 @@
 A responsive pizza restaurant landing page with custom CSS and JavaScript form validation.
 
 ##  Live Demo
-[Click here to view](https://alishahwaiz-182.github.io/Pizza-clone/)
+[Click here to view](https://pizza-shop-pk.netlify.app/)
 
 ##  Features
 - Responsive navbar with hamburger menu
