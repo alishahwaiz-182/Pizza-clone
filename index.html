@@ -28,12 +28,9 @@
             z-index: 1000;
         }
 
-
         .first .logoname {
-            /* color: aliceblue; */
             color: rgb(230, 107, 12);
             font-size: 30px;
-
         }
 
         .logoname:hover {
@@ -62,7 +59,6 @@
             padding: 14px 35px;
             border-radius: 10px;
             transition: 1.5s;
-
         }
 
         .hamburger {
@@ -79,10 +75,9 @@
         }
 
         @media(max-width:768px) {
-
             nav {
                 justify-content: space-between;
-                padding: 0px 50px;
+                padding: 0px 30px;
             }
 
             .second {
@@ -100,7 +95,6 @@
                 padding: 20px 0px;
             }
 
-
             .hamburger {
                 display: flex;
             }
@@ -108,9 +102,7 @@
             .second.active {
                 display: block;
             }
-
         }
-
 
         main {
             padding-top: 100px;
@@ -123,7 +115,6 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            /* padding-top: 100px; */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -131,86 +122,73 @@
         }
 
         .home h1 {
-            position: relative;
-            top: 0;
-            left: 0;
             color: rgb(230, 107, 12);
             font-size: 48px;
             z-index: 2;
-            padding-left: 600px;
+            text-align: center;
+            padding: 0 20px;
         }
 
         .home p {
-            position: relative;
-            top: 0;
-            left: 0;
             color: white;
             z-index: 2;
-            padding-left: 600px;
+            text-align: center;
+            padding: 0 20px;
+            font-size: 16px;
+            margin-top: 10px;
         }
 
-        @media(max-width:1290px) {
-
+        @media(max-width:768px) {
             .home {
                 height: 80vh;
-                text-align: center;
-
             }
 
             .home h1 {
-                font-size: 48px;
-                padding-right: 0;
-                padding-left: 0;
+                font-size: 32px;
             }
 
             .home p {
-                font-size: 16px;
-                padding-left: 0;
-                padding-right: 0;
+                font-size: 14px;
             }
         }
 
         section.menu {
-            height: 700px;
             background-color: rgba(24, 24, 24, 0.959);
-
-
+            padding: 50px 20px;
         }
 
         .menu h1 {
             color: rgb(230, 107, 12);
             text-align: center;
             padding-top: 50px;
+            margin-bottom: 30px;
         }
 
         .cardscontainer {
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .cards {
-            margin: 20px;
-            height: 550px;
-            width: 450px;
+            width: 320px;
             border: 1px solid rgb(230, 107, 12);
             transition: all 1.5s;
-            transform-origin: bottom;
         }
 
         .cardimg img {
             width: 100%;
-            height: 400px;
+            height: 300px;
             object-fit: cover;
-
-
         }
 
         .cards a {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 0px 160px 0px 160px;
+            margin: 10px 0;
         }
 
         .cardbtn {
@@ -220,50 +198,37 @@
             color: white;
             border-radius: 15px;
             transition: all 1.5s;
-
         }
 
         .cardbtn:hover {
             background-color: rgba(190, 103, 16, 0.863);
             padding: 13px 20px;
-            margin: 0px 147px 0px 140px;
             transition: all 1.5s;
         }
 
         .cards .title {
             color: rgb(230, 107, 12);
-            font-size: 25px;
+            font-size: 22px;
             font-weight: 600;
             text-align: center;
+            margin: 10px 0;
         }
 
         .cards .para {
             color: white;
-            font-size: 20px;
+            font-size: 16px;
             text-align: center;
-            margin: 5px 0px;
+            margin: 5px 10px;
         }
 
         .cards:hover {
             transition: all 1.5s;
             transform: scale(1.03);
-
-        }
-
-        @media (max-width:1457px) {
-
-            section.menu {
-                height: 100%;
-            }
-
-            .cardscontainer {
-                flex-direction: column;
-            }
         }
 
         .contactus {
             background-color: rgba(24, 24, 24, 0.959);
-            min-height: 100vh;
+            min-height: 60vh;
             padding: 80px 20px;
             text-align: center;
         }
@@ -278,7 +243,6 @@
             margin-bottom: 30px;
         }
 
-        /* Form */
         .contact-form {
             max-width: 500px;
             margin: auto;
@@ -287,7 +251,6 @@
             gap: 20px;
         }
 
-        /* Inputs */
         .contact-form input,
         .contact-form textarea {
             padding: 12px 15px;
@@ -295,6 +258,7 @@
             border: none;
             outline: none;
             font-size: 16px;
+            width: 100%;
         }
 
         .contact-form textarea {
@@ -302,7 +266,6 @@
             height: 120px;
         }
 
-        /* Button */
         .contact-form button {
             background-color: transparent;
             border: 2px solid rgb(230, 107, 12);
@@ -318,18 +281,10 @@
             background-color: rgba(190, 103, 16, 0.863);
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            .contact-form {
-                width: 100%;
-            }
-        }
-
         footer {
             background-color: rgba(24, 24, 24, 0.959);
             box-shadow: 0px -3px 30px rgba(190, 103, 16, 0.863);
             color: white;
-            /* margin-top: 50px; */
         }
 
         .footer-container {
@@ -338,6 +293,7 @@
             align-items: flex-start;
             padding: 50px 20px;
             flex-wrap: wrap;
+            gap: 30px;
         }
 
         .footer-logo h2 {
@@ -389,13 +345,11 @@
             font-size: 14px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .footer-container {
                 flex-direction: column;
                 text-align: center;
                 align-items: center;
-                gap: 30px;
             }
         }
     </style>
@@ -420,96 +374,55 @@
                 </ul>
             </div>
 
-
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-
         </nav>
-
     </header>
 
     <main>
-
         <section class="home" id="home">
-
             <h1>Welcome To Pizza Shop</h1>
             <p>Freshly baked pizzas made with premium ingredients, served hot and full of flavor.</p>
-
         </section>
 
-
         <section class="menu" id="menu">
-
             <h1>Our Signature Pizzas</h1>
-
             <div class="cardscontainer">
-
                 <div class="cards">
-
                     <div class="cardimg">
                         <img src="img/card1.png" alt="">
                     </div>
-
-                    <div class="title">
-                        Cheese Pizza
-                    </div>
-
-                    <div class="para">
-                        Crispy crust topped with rich tomato sauce and perfectly melted mozzarella cheese.
-                    </div>
-
+                    <div class="title">Cheese Pizza</div>
+                    <div class="para">Crispy crust topped with rich tomato sauce and perfectly melted mozzarella cheese.</div>
                     <a href="" class="cardbtn">Order Now</a>
-
                 </div>
 
                 <div class="cards">
-
                     <div class="cardimg">
                         <img src="img/card2.png" alt="">
                     </div>
-
-                    <div class="title">
-                        Pepporoni Pizza
-                    </div>
-
-                    <div class="para">
-                        Golden crust topped with spicy pepperoni slices and melted cheesy goodness
-                    </div>
-
+                    <div class="title">Pepperoni Pizza</div>
+                    <div class="para">Golden crust topped with spicy pepperoni slices and melted cheesy goodness.</div>
                     <a href="" class="cardbtn">Order Now</a>
-
                 </div>
 
                 <div class="cards">
-
                     <div class="cardimg">
                         <img src="img/card3.png" alt="">
                     </div>
-
-                    <div class="title">
-                        Afghani Pizza
-                    </div>
-
-                    <div class="para">
-                        Soft base topped with creamy white sauce, tender chicken, and mild spices
-                    </div>
-
+                    <div class="title">Afghani Pizza</div>
+                    <div class="para">Soft base topped with creamy white sauce, tender chicken, and mild spices.</div>
                     <a href="" class="cardbtn">Order Now</a>
-
                 </div>
-
             </div>
-
         </section>
 
-
-        <section class="contactus">
+        <section class="contactus" id="contactus">
             <h1>Contact Us</h1>
             <p>We'd love to hear from you</p>
-
             <form class="contact-form" id="contactform">
                 <input type="text" id="name" placeholder="Enter your name">
                 <input type="email" id="email" placeholder="Enter your email">
@@ -517,7 +430,6 @@
                 <button type="submit">Submit</button>
             </form>
         </section>
-
     </main>
 
     <footer>
@@ -526,7 +438,6 @@
                 <h2>&PIZZA</h2>
                 <p>Fresh pizzas, hot deals & happy customers 🍕</p>
             </div>
-
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
@@ -536,19 +447,16 @@
                     <li><a href="#contactus">Contact</a></li>
                 </ul>
             </div>
-
             <div class="footer-contact">
                 <h3>Contact</h3>
                 <p>Email: pizza@shop.com</p>
                 <p>Phone: +92 300 1234567</p>
             </div>
         </div>
-
         <div class="footer-bottom">
             © 2026 Pizza Shop | All Rights Reserved
         </div>
     </footer>
-
 
     <script>
         const hamburger = document.querySelector(".hamburger");
@@ -558,42 +466,30 @@
             menu.classList.toggle("active");
         });
 
-
-
-
         const form = document.getElementById("contactform");
 
         form.addEventListener("submit", function (e) {
-            e.preventDefault(); // form submit ko rokta hai
-
-            // values
+            e.preventDefault();
             const name = document.getElementById("name").value.trim();
             const email = document.getElementById("email").value.trim();
             const address = document.getElementById("address").value.trim();
 
-            // simple validation
             if (name === "" || email === "" || address === "") {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Please fill all the fields!'
                 });
-                return; // koi aur action na ho
+                return;
             } else {
-
-                // agar sab sahi hai
                 Swal.fire({
                     icon: 'success',
                     title: 'Congratulations!',
                     text: 'Thankyou for Order'
                 });
-
-                // optional: form reset
-                form.reset()
-            };
+                form.reset();
+            }
         });
-
-
     </script>
 
 </body>
